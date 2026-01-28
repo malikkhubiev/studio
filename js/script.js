@@ -1058,18 +1058,6 @@ function initDoorNavigation() {
     // Door click handler for all doors
     openDoors.forEach(openDoor => {
         openDoor.style.cursor = 'pointer';
-        openDoor.addEventListener('click', () => {
-            // Track which page/section the user came from
-            const isFromHero = openDoor.closest('.hero-exit') !== null;
-            const returnPath = currentPage + (isFromHero ? '#hero' : '#contact');
-            const fromParam = '?from=' + encodeURIComponent(returnPath);
-
-            if (is420()) {
-                window.location.href = 'dramatic-exit.html' + fromParam;
-            } else {
-                window.location.href = 'break.html' + fromParam;
-            }
-        });
     });
 }
 
