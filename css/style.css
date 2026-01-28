@@ -385,8 +385,8 @@ header {
 
 .menu-footer {
     display: flex;
-    justify-content: flex-end; /* Align to right */
-    gap: 1em; /* Changed to 1em as requested */
+    justify-content: center;
+    gap: 1em;
     width: 100%;
     font-family: var(--font-geist);
     font-size: 0.9rem;

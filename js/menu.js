@@ -71,13 +71,17 @@
                 </nav>
                 <div class="menu-separator"></div>
                 <div class="menu-footer">
-                    <a href="${SOCIAL_LINKS.linkedin}" target="_blank" rel="noopener noreferrer" class="social-link">LINKEDIN ↗</a>
-                    <a href="${SOCIAL_LINKS.behance}" target="_blank" rel="noopener noreferrer" class="social-link">BEHANCE ↗</a>
-                    <a href="${SOCIAL_LINKS.instagram}" target="_blank" rel="noopener noreferrer" class="social-link">INSTAGRAM ↗</a>
+                    <a class="social-link">Качество ↗</a>
+                    <a class="social-link">Скорость ↗</a>
+                    <a class="social-link">Развитие ↗</a>
                 </div>
             </div>
         `;
     }
+
+    // <a href="${SOCIAL_LINKS.linkedin}" target="_blank" rel="noopener noreferrer" class="social-link">LINKEDIN ↗</a>
+    // <a href="${SOCIAL_LINKS.behance}" target="_blank" rel="noopener noreferrer" class="social-link">BEHANCE ↗</a>
+    // <a href="${SOCIAL_LINKS.instagram}" target="_blank" rel="noopener noreferrer" class="social-link">INSTAGRAM ↗</a>
 
     // Initialize menu in container
     function initMenu() {
