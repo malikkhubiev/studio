@@ -166,7 +166,7 @@ body {
     color: var(--bg-primary);
     padding: 10px 15px;
     font-family: Widock;
-    font-size: 4vw;
+    font-size: 5vw;
     transition: 0.2s ease-in-out;
     animation: pulse 0.5s infinite alternate;
 }
@@ -1136,7 +1136,7 @@ main {
 }
 
 .process-step-title {
-    font-weight: 100;
+    font-weight: bold;
     font-family: Century Gothic;
     font-size: 21px;
     letter-spacing: 0.06em;
@@ -1724,13 +1724,12 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 5rem;
 }
 
 .contact-title {
     font-family: Widock;
     font-weight: 800;
-    font-size: 5vw;
+    font-size: 9vw;
     text-transform: uppercase;
     color: var(--text-primary);
     line-height: 0.9;
@@ -2344,7 +2343,7 @@ main {
 }
 .userName{
     background-color: transparent;
-    margin: 30px 0;
+    margin: 15px 0;
     border: none;
     border-top: 1px solid var(--text-primary);
     border-bottom: 1px solid var(--text-primary);
