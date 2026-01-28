@@ -170,7 +170,7 @@
 .work-card-title {
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: 50px;
+    font-size: 3vw;
     text-transform: uppercase;
     line-height: 1;
     margin: 0;
@@ -300,10 +300,6 @@
 
     /* Bigger title and badge on mobile */
 
-    .work-card-title {
-        font-size: clamp(3rem, 10vw, 5rem);
-    }
-
     .work-card-badge {
         width: clamp(3rem, 10vw, 5rem);
         height: clamp(3rem, 10vw, 5rem);
@@ -376,10 +372,6 @@
         padding: 0.75em 1em;
     }
 
-    .work-card-title {
-        font-size: clamp(3rem, 10vw, 5rem);
-    }
-
     .work-card-badge-wrapper {
         padding-left: 0.5em;
     }
@@ -410,7 +402,7 @@
     }
 
     .work-card-title {
-        font-size: clamp(3rem, 15vw, 5rem);
+        font-size: 5vw;
     }
 
     .work-card-badge {

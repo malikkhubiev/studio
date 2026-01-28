@@ -406,6 +406,9 @@ window.addEventListener('load', () => {
 
     // Scroll-based theme switch at footer (index page only)
     initFooterThemeSwitch();
+
+    // Process section timeline animations
+    initProcessSectionAnimations();
 });
 
 // UX/UI width matching moved to CSS media queries to prevent CLS
@@ -1880,6 +1883,52 @@ function initFooterThemeSwitch() {
             start: 'center center',
             onEnter: switchTheme,
             onLeaveBack: switchTheme
+        });
+    }
+}
+
+// Process Section – scroll reveal & timeline animation
+function initProcessSectionAnimations() {
+    const section = document.querySelector('.process-section');
+    if (!section || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    const header = section.querySelector('.process-header');
+    const steps = section.querySelectorAll('.process-step');
+
+    if (header) {
+        gsap.set(header, { opacity: 0, y: 40 });
+
+        ScrollTrigger.create({
+            trigger: section,
+            start: 'top 80%',
+            once: true,
+            onEnter: () => {
+                gsap.to(header, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.9,
+                    ease: 'power3.out'
+                });
+            }
+        });
+    }
+
+    if (steps.length) {
+        gsap.set(steps, { opacity: 0, y: 30, scale: 0.98 });
+
+        ScrollTrigger.batch(steps, {
+            start: 'top 85%',
+            once: true,
+            onEnter: (batch) => {
+                gsap.to(batch, {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.7,
+                    ease: 'power3.out',
+                    stagger: 0.08
+                });
+            }
         });
     }
 }

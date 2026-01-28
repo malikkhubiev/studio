@@ -63,10 +63,10 @@
                     </svg>
                 </div>
                 <nav class="menu-items">
-                    <a href="${basePath}index.html" class="menu-link"><div class="menu-link-inner">HOME</div></a>
-                    <a href="${basePath}about.html" class="menu-link"><div class="menu-link-inner">ABOUT</div></a>
-                    <a href="${basePath}works.html" class="menu-link"><div class="menu-link-inner">WORK</div></a>
-                    <a href="#contact" class="menu-link"><div class="menu-link-inner">CONTACT</div></a>
+                    <a href="#main" class="menu-link"><div class="menu-link-inner">Главная</div></a>
+                    <a href="#projects" class="menu-link"><div class="menu-link-inner">Проекты</div></a>
+                    <a href="#process" class="menu-link"><div class="menu-link-inner">Процесс</div></a>
+                    <a href="#contact" class="menu-link"><div class="menu-link-inner">Контакты</div></a>
                     ${themeToggleHTML}
                 </nav>
                 <div class="menu-separator"></div>

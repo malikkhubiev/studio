@@ -133,11 +133,11 @@ body {
 }
 
 .maincolor{
-    animation: rainbowcolor 3s linear infinite alternate;
+    animation: rainbowcolor 1s linear infinite alternate;
 }
 
 .mainbg{
-    animation: rainbowbg 3s linear infinite alternate;
+    animation: rainbowbg 1s linear infinite alternate;
 }
 
 @keyframes rainbowcolor {
@@ -316,9 +316,9 @@ header {
 }
 
 .menu-link {
-    font-family: var(--font-display);
+    font-family: Widock;
     font-weight: 800;
-    font-size: 4rem;
+    font-size: 2vw;
     text-decoration: none;
     letter-spacing: normal;
     color: var(--text-primary);
@@ -335,7 +335,7 @@ header {
     display: block;
     transform: translateY(150%); /* Increased from 110% to ensure it's fully hidden */
     will-change: transform;
-    margin-top: -0.1em; /* Adjusted to center text visually in the new padded area */
+    margin-top: 10px;
 }
 
 /* Reveal Animation Classes */
@@ -1001,6 +1001,162 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Process Section */
+.process-section {
+    position: relative;
+    padding: 6rem 1em 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.process-inner {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.process-header {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.process-title {
+    font-family: Widock;
+    font-weight: 800;
+    font-size: 10vw;
+    text-transform: uppercase;
+    line-height: 1.05;
+}
+
+.process-timeline {
+    margin-top: 100px;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1.75rem;
+}
+
+.process-axis {
+    position: relative;
+    width: 2px;
+    border-radius: 999px;
+    background: linear-gradient(to bottom, var(--text-primary), rgba(173, 168, 164, 0.1));
+    margin: 0.35rem 0;
+    overflow: hidden;
+}
+
+.process-axis::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #ffb347, #ffd93b, #62ff00, #00ddff);
+    animation: processAxisFlow 6s linear infinite;
+    opacity: 0.35;
+}
+
+@keyframes processAxisFlow {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.process-step {
+    margin-top: 20px;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1.25rem;
+    padding: 0.9rem 1rem;
+    border-radius: 14px;
+    background-color: var(--bg-primary);
+    border: 1px solid black;
+    overflow: hidden;
+    transform-origin: left center;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease,
+                background-color 0.35s ease;
+}
+
+[data-theme="dark"] .process-step {
+    border: 1px solid white;
+}
+
+.process-step::before {
+    content: attr(data-step);
+    position: absolute;
+    right: 1rem;
+    top: 0.6rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    opacity: 0.35;
+}
+
+.process-step-meta {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.process-step-pill {
+    color: var(--text-primary);
+    font-family: Widock;
+    font-size: 50px;
+    line-height: 1;
+}
+
+.process-step-tag {
+    font-family: Widock;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-primary);
+}
+
+.process-step-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-right: 2.5rem;
+}
+
+.process-step-title {
+    font-family: Century Gothic;
+    font-size: 25px;
+    letter-spacing: 0.06em;
+}
+
+.process-step-text {
+    font-family: var(--font-geist);
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--text-secondary);
+}
+
+.process-step:hover {
+    transform: translateX(6px) translateY(-2px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    border-color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .process-step:hover {
+    border-color: rgba(252, 248, 245, 0.9);
 }
 
 .projects-header {
