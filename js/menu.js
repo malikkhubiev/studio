@@ -472,13 +472,11 @@
             return;
         }
         
-        // Формируем сообщение
-        const message = `Здравствуйте! Я хочу заказать разработку сайта. Меня зовут ${userName}`;
+        const phoneNumber = '79991234567'; // Замени на нужный номер
         
-        // Кодируем сообщение для URL
+        const message = `Здравствуйте! Я хочу заказать разработку сайта. Меня зовут ${userName}`;
         const encodedMessage = encodeURIComponent(message);
         
-        // Открываем WhatsApp
-        window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
     });
 })();
