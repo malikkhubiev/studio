@@ -208,28 +208,38 @@
         menuBtn.addEventListener('click', openMenu);
         closeBtn.addEventListener('click', closeMenu);
 
-        // Smooth scroll for contact link
-        const contactLink = menuCard.querySelector('a[href="#contact"]');
-        if (contactLink) {
-            contactLink.addEventListener('click', (e) => {
+        // Smooth scroll for each menu anchor link
+        menuLinks.forEach((linkEl) => {
+            const href = linkEl.getAttribute('href');
+            if (!href || !href.startsWith('#')) return;
+
+            linkEl.addEventListener('click', (e) => {
                 e.preventDefault();
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                    closeMenu();
-                    // Wait for menu close animation, then scroll
-                    setTimeout(() => {
-                        if (typeof lenis !== 'undefined') {
-                            lenis.scrollTo(contactSection, {
-                                duration: 1.8,
-                                easing: (t) => 1 - Math.pow(1 - t, 4)
-                            });
-                        } else {
-                            contactSection.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }, 500);
-                }
+
+                const targetId = href.slice(1);
+                const targetSection = document.getElementById(targetId);
+
+                // Always close menu first; if target doesn't exist, still update hash
+                closeMenu();
+
+                // Wait for menu close animation, then scroll
+                setTimeout(() => {
+                    if (!targetSection) {
+                        window.location.hash = href;
+                        return;
+                    }
+
+                    if (typeof lenis !== 'undefined' && lenis && typeof lenis.scrollTo === 'function') {
+                        lenis.scrollTo(targetSection, {
+                            duration: 1.8,
+                            easing: (t) => 1 - Math.pow(1 - t, 4)
+                        });
+                    } else {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 500);
             });
-        }
+        });
 
         // Close menu when clicking outside
         document.addEventListener('click', (event) => {
@@ -450,4 +460,25 @@
         init: initMenu,
         socialLinks: SOCIAL_LINKS
     };
+
+    // Whatsapp
+    document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const userName = document.getElementById('userName').value.trim();
+        
+        if (!userName) {
+            alert('Пожалуйста, введите ваше имя');
+            return;
+        }
+        
+        // Формируем сообщение
+        const message = `Здравствуйте! Я хочу заказать разработку сайта. Меня зовут ${userName}`;
+        
+        // Кодируем сообщение для URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Открываем WhatsApp
+        window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
+    });
 })();
