@@ -472,7 +472,7 @@
             return;
         }
         
-        const phoneNumber = '79991234567'; // Замени на нужный номер
+        const phoneNumber = '79280296995';
         
         const message = `Здравствуйте! Я хочу заказать разработку сайта. Меня зовут ${userName}`;
         const encodedMessage = encodeURIComponent(message);
