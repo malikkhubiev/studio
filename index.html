@@ -27,16 +27,19 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/works.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
-    </noscript>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106538916', 'ym');
+
+        ym(106538916, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106538916" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body class="index-page">
     <div class="loader">
@@ -296,7 +299,7 @@
             </h2>
             <form id="whatsappForm" class="contact-cta">
                 <input class="userName" type="text" id="userName" placeholder="Введите ваше имя" required>
-                <button class="main_button" type="submit">Рассчитать проект</button>
+                <button class="main_button" type="submit" id="projectButton">Рассчитать проект</button>
             </form>
         </div>
 
@@ -313,7 +316,7 @@
                     <span class="contact-exit-line"><span class="contact-exit-word">возможность</span></span>
                     <span class="contact-exit-line"><span class="contact-exit-word countdown-timer">00:00:00</span></span>
                 </div>
-                <div class="contact-door-container">
+                <a href="#process" class="contact-door-container">
                     <img src="images/closed-door-black.svg" alt="" class="contact-door-icon contact-door-closed contact-door-closed-light">
                     <img src="images/closed-door-beige.svg" alt="" class="contact-door-icon contact-door-closed contact-door-closed-dark">
                     <div class="contact-door-open">
@@ -329,7 +332,7 @@
                             <path class="door-frame-border" d="M44.6,0C20,0,0,20,0,44.6v87.3h89.3V44.6C89.3,20,69.3,0,44.6,0ZM9.1,122.8V44.6c0-19.6,15.9-35.5,35.5-35.5s35.5,15.9,35.5,35.5v78.2H9.1Z" fill="var(--text-primary)"></path>
                         </svg>
                     </div>
-                </div>
+                </a>
             </div>
         </footer>
     </section>

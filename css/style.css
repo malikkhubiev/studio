@@ -20,8 +20,8 @@
     --border: var(--beige);
 
     --font-display: 'MangoGrotesque', sans-serif;
-    --font-geist: 'Geist', sans-serif;
-    --font-playfair: 'Playfair Display', serif;
+    --font-SansSerif: sans-serif;
+    --font-playfair: 'PlayFair', serif;
 }
 
 /* Dark mode */
@@ -49,17 +49,17 @@
 }
 
 @font-face {
-    font-family: 'Widock';
-    src: url('../fonts/Widock.otf') format('truetype');
+    font-family: 'TikTokSans';
+    src: url('../fonts/TikTokSans-VF-v4-RC.otf') format('truetype');
     font-weight: 300 700;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'BiggerDisplay';
-    src: url('../fonts/biggerdisplay.otf') format('opentype');
-    font-weight: normal;
+    font-family: 'Widock';
+    src: url('../fonts/Widock.otf') format('truetype');
+    font-weight: 300 700;
     font-style: normal;
     font-display: swap;
 }
@@ -69,6 +69,14 @@
     src: url('../fonts/Mango%20Grotesque-VF.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PlayFair';
+    src: url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
     font-display: swap;
 }
 
@@ -106,7 +114,7 @@ html.lenis, html.lenis body {
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -219,7 +227,7 @@ header {
 }
 
 .logo {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-weight: normal;
     font-size: 0.9rem;
     line-height: 1;
@@ -388,7 +396,7 @@ header {
     justify-content: center;
     gap: 1em;
     width: 100%;
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 0.9rem;
     text-transform: uppercase;
 }
@@ -451,7 +459,7 @@ main {
 
 .hero-exit-word {
     display: inline-block;
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 1rem;
     color: var(--bg-primary);
     background-color: var(--text-primary);
@@ -528,7 +536,7 @@ main {
     grid-column: 5 / 8; /* Adjust based on screenshot */
     grid-row: 1;
     text-align: left;
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 0.9rem;
     line-height: 1.4;
     align-self: start;
@@ -684,7 +692,7 @@ main {
 }
 
 .about-me-label {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -693,7 +701,7 @@ main {
 }
 
 .about-me-text {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: clamp(1.6rem, 4vw, 3.5rem);
     font-weight: 700;
     line-height: 1.25;
@@ -731,7 +739,7 @@ main {
 }
 
 .about-me-description {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: clamp(1.4rem, 2vw, 2rem);
     line-height: 1.4;
     color: var(--text-primary);
@@ -1136,14 +1144,14 @@ main {
 }
 
 .process-step-title {
-    font-weight: bold;
-    font-family: Century Gothic;
+    font-weight: 100;
+    font-family: TikTokSans;
     font-size: 21px;
     letter-spacing: 0.06em;
 }
 
 .process-step-text {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 0.9rem;
     line-height: 1.45;
     color: var(--text-secondary);
@@ -1348,7 +1356,7 @@ main {
 }
 
 .view-all-circle-text text {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 11.4px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -1701,7 +1709,7 @@ main {
 }
 
 .contact-logo {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-weight: normal;
     font-size: 0.9rem;
     line-height: 1.2;
@@ -1711,7 +1719,7 @@ main {
 }
 
 .contact-availability {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 0.9rem;
     color: var(--text-primary);
     text-align: right;
@@ -1750,7 +1758,7 @@ main {
 }
 
 .contact-cta-label {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 0.9rem;
     color: var(--text-primary);
     text-transform: uppercase;
@@ -1780,7 +1788,7 @@ main {
 }
 
 .contact-social-link {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 0.9rem;
     color: var(--text-primary);
     text-decoration: none;
@@ -1829,7 +1837,7 @@ main {
 
 .contact-exit-word {
     display: inline-block;
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 1rem;
     color: var(--bg-primary);
     background-color: var(--text-primary);
@@ -2055,7 +2063,7 @@ main {
 .break-label,
 .break-line-inner,
 .break-hint-inner {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: clamp(0.7rem, 1.2vw, 0.9rem);
     font-weight: 400;
     color: var(--soft-beige);
@@ -2066,7 +2074,7 @@ main {
 /* Large text style - countdown time and CTA */
 .break-countdown-time,
 .break-cta-inner {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: clamp(1rem, 3vw, 2.25rem);
     font-weight: 700;
     color: var(--soft-beige);
@@ -2108,7 +2116,7 @@ main {
 /* Custom cursor text */
 .break-cursor-hint {
     position: fixed;
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: clamp(0.7rem, 1.2vw, 0.9rem);
     font-weight: 400;
     color: var(--soft-beige);
@@ -2128,7 +2136,7 @@ main {
     top: 38%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 0.8rem;
     font-weight: 400;
     color: var(--soft-beige);

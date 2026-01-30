@@ -225,7 +225,7 @@
 }
 
 .work-card-badge-text text {
-    font-family: var(--font-geist);
+    font-family: var(--font-SansSerif);
     font-size: 9.5px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -364,10 +364,6 @@
         transform: none;
     }
 
-    .work-card-image {
-        height: 35vh;
-    }
-
     .work-card-info {
         padding: 0.75em 1em;
     }
@@ -379,12 +375,6 @@
     .work-card-badge {
         width: clamp(3rem, 10vw, 5rem);
         height: clamp(3rem, 10vw, 5rem);
-    }
-}
-
-@media (max-width: 862px) and (min-width: 481px) {
-    .work-card-image {
-        height: 65vh;
     }
 }
 
@@ -418,10 +408,6 @@
 
     .works-title-main {
         font-size: calc((100vw - 2em) / 4.8);
-    }
-
-    .work-card-image {
-        height: 30vh;
     }
 
     .work-card-title {
