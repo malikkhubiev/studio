@@ -477,6 +477,9 @@
         }
 
         ym(106538916,'reachGoal','start_project')
+        // После инициализации или при клике
+        console.log('YM object:', window.ym);
+        console.log('YM counter data:', ym.a);
         
         const phoneNumber = '79280296995';
         

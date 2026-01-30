@@ -1433,7 +1433,6 @@ main {
 }
 
 .custom-cursor.hovering {
-    background-image: url('../images/custom-cursor-hover.svg');
     width: 42px;
     height: 42px;
     transform: translate(-50%, -50%) scale(1) rotate(0deg);
