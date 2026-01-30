@@ -475,6 +475,8 @@
             alert('Пожалуйста, введите ваше имя');
             return;
         }
+
+        ym(106538916,'reachGoal','start_project')
         
         const phoneNumber = '79280296995';
         
