@@ -542,7 +542,7 @@ function initCustomCursor() {
     // Create contact title follow cursor
     const contactTitleCursor = document.createElement('div');
     contactTitleCursor.className = 'contact-title-cursor';
-    contactTitleCursor.innerHTML = `<img src="images/contact.png" alt="">`;
+    contactTitleCursor.innerHTML = `<img src="images/contact.webp" alt="">`;
     document.body.appendChild(contactTitleCursor);
 
     // Get all project images (white areas) and work cards
@@ -1950,4 +1950,3 @@ function updateThemeToggleVisuals(isDark) {
         gsap.to(themeToggle, { backgroundColor: 'rgba(26, 26, 26, 0.3)', duration, ease });
     }
 }
-
