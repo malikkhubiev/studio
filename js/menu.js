@@ -71,9 +71,9 @@
                 </nav>
                 <div class="menu-separator"></div>
                 <div class="menu-footer">
-                    <a class="social-link">Качество ↗</a>
-                    <a class="social-link">Скорость ↗</a>
-                    <a class="social-link">Развитие ↗</a>
+                    <a class="social-link">Качество↗</a>
+                    <a class="social-link">Скорость↗</a>
+                    <a class="social-link">Развитие↗</a>
                 </div>
             </div>
         `;

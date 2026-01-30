@@ -15,8 +15,7 @@
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/.apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="V.APP" />
-    <link rel="manifest" href="./site.webmanifest" />
-
+    
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://website-malik.vercel.app/">
@@ -24,8 +23,9 @@
     <meta property="og:image" content="images/og-image.jpg">
     <meta property="og:locale" content="en_US">
 
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/works.css">
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
@@ -280,6 +280,45 @@
         </div>
     </section>
 
+    <section id="team" class="team-section">
+        <h2 class="team_header">Достижения наших основателей:</h2>
+        <div class="team-sticky">
+            <div class="team-sticky-inner">
+                <div class="team-sticky-left">
+                    <div class="team-numbers">
+                        <span class="team-number-item active" data-index="0"></span>
+                        <span class="team-number-item" data-index="1"></span>
+                        <span class="team-number-item" data-index="2"></span>
+                    </div>
+                </div>
+                <div class="team-sticky-center"><!-- тексты в скролле ниже --></div>
+                <div class="team-labels-col">
+                    <div class="team-labels">
+                        <span class="team-label-item active" data-index="0">01</span>
+                        <span class="team-label-item" data-index="1">02</span>
+                        <span class="team-label-item" data-index="2">03</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="team-items-wrap">
+            <div class="team-items">
+                <article class="team-item active">
+                    <p class="team-item-header">Деньги</p>
+                    <p class="team-item-text">Разрабатывали решения для крупнейший портала и маркетплейса товаров премиум-класса России.</p>
+                </article>
+                <article class="team-item">
+                    <p class="team-item-header">Экспертиза</p>
+                    <p class="team-item-text">Будучи преподавателями fullstack-разработки и веб-дизайна для 500+ студентов, они отточили навык создания не просто кода, а понятных и эффективных цифровых решений.</p>
+                </article>
+                <article class="team-item">
+                    <p class="team-item-header">Искусственный интеллект</p>
+                    <p class="team-item-text">Улучшали платформы по поиску, ранжированию и оценке IT-специалистов с помощью передовых технологий — больших языковых моделей (LLM) и RAG-архитектур. Активно используют современные инструменты при построении сайтов.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <div class="contact-marquee-wrapper">
         <div class="contact-marquee">
             <div class="contact-marquee-track">
@@ -315,23 +354,6 @@
                     <span class="contact-exit-line"><span class="contact-exit-word">возможность</span></span>
                     <span class="contact-exit-line"><span class="contact-exit-word countdown-timer">00:00:00</span></span>
                 </div>
-                <a href="#process" class="contact-door-container">
-                    <img src="images/closed-door-black.svg" alt="" class="contact-door-icon contact-door-closed contact-door-closed-light">
-                    <img src="images/closed-door-beige.svg" alt="" class="contact-door-icon contact-door-closed contact-door-closed-dark">
-                    <div class="contact-door-open">
-                        <canvas id="psychedelicCanvas" width="178" height="264"></canvas>
-                        <svg class="contact-door-frame" viewBox="0 0 89.3 131.9" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <mask id="doorMask">
-                                    <rect width="100%" height="100%" fill="white"></rect>
-                                    <path d="M44.6,9.1c-19.6,0-35.5,15.9-35.5,35.5v78.2h71V44.6C80.1,25,64.2,9.1,44.6,9.1Z" fill="black"></path>
-                                </mask>
-                            </defs>
-                            <rect class="door-frame-bg" width="100%" height="100%" fill="var(--bg-primary)" mask="url(#doorMask)"></rect>
-                            <path class="door-frame-border" d="M44.6,0C20,0,0,20,0,44.6v87.3h89.3V44.6C89.3,20,69.3,0,44.6,0ZM9.1,122.8V44.6c0-19.6,15.9-35.5,35.5-35.5s35.5,15.9,35.5,35.5v78.2H9.1Z" fill="var(--text-primary)"></path>
-                        </svg>
-                    </div>
-                </a>
             </div>
         </footer>
     </section>
@@ -342,6 +364,6 @@
     <script src="js/loader.js"></script>
     <script src="js/logo.js" defer=""></script>
     <script src="js/menu.js" defer=""></script>
-    <script src="js/script.min.js" defer=""></script>
+    <script src="js/script.js" defer=""></script>
 
 </body></html>

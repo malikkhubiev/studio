@@ -1168,6 +1168,190 @@ main {
     border-color: rgba(252, 248, 245, 0.9);
 }
 
+/* Team section – works-style: fixed bar (counter + labels right), scroll items */
+.team-section {
+    position: relative;
+}
+
+/* Фиксированная панель: показывается только когда секция в зоне видимости (JS добавляет .team-sticky-visible) */
+.team-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.team-sticky.team-sticky-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.team-sticky .team-sticky-inner {
+    pointer-events: auto;
+}
+
+.team-sticky-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 2rem;
+}
+
+.team-sticky-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Слева: 01, 02, 03 — активный чёрный, остальные серые */
+.team-numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.team-number-item {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1;
+    color: var(--text-secondary);
+    transition: color 0.4s ease;
+}
+
+.team-number-item.active {
+    color: var(--text-primary);
+}
+
+.team-sticky-center {
+    /* Тексты в .team-items в потоке скролла */
+    min-height: 0;
+}
+
+.team-labels-col {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.team-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: right;
+    font-family: var(--font-playfair);
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.team-label-item {
+    white-space: nowrap;
+    font-size: 30px;
+    color: var(--text-secondary);
+    transition: color 0.4s ease;
+    pointer-events: none;
+}
+
+.team-label-item.active {
+    color: var(--text-primary);
+}
+
+.team-section{
+    margin-top: 300px;
+}
+
+.team-items-wrap {
+    position: relative;
+    z-index: 11;
+}
+
+.team_header{
+    font-family: Widock;
+    font-size: 7vw;
+}
+
+.team-items {
+    padding: 100vh 1em 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+}
+
+.team-item {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+}
+
+.team-item-header{
+    font-family: Widock;
+    font-size: 4vw;
+}
+
+.team-item-text {
+    font-family: TikTokSans;
+    font-weight: 400;
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+    padding: 1.5rem 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+@media (max-width: 768px) {
+
+    .team_header{
+        font-size: 9vw;
+    }
+
+    .team-item-header{
+        font-size: 7vw;
+    }
+
+    .team-sticky {
+        padding: 0 1em;
+    }
+
+    .team-sticky-inner {
+        grid-template-columns: auto 1fr auto;
+        gap: 1rem;
+    }
+
+    .team-labels-col {
+        justify-content: flex-end;
+    }
+
+    .team-items {
+        padding: calc(100vh + 1rem) 1em 3rem;
+        gap: 15vh;
+    }
+
+    .team-item {
+        min-height: 50vh;
+    }
+}
+
 .projects-header {
     display: flex;
     width: 100%;

@@ -12,7 +12,16 @@ const lenis = new Lenis({
     syncTouch: false,
 });
 
-// Connect Lenis to GSAP ScrollTrigger (single integration point - no duplicate raf calls)
+// Connect Lenis to GSAP ScrollTrigger: proxy so ScrollTrigger uses Lenis scroll position
+ScrollTrigger.scrollerProxy(document.documentElement, {
+    scrollTop(value) {
+        if (arguments.length) lenis.scrollTo(value);
+        return lenis.scroll || window.scrollY;
+    },
+    getBoundingClientRect() {
+        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    }
+});
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
@@ -409,6 +418,9 @@ window.addEventListener('load', () => {
 
     // Process section timeline animations
     initProcessSectionAnimations();
+
+    // Team / About company section reveal
+    initTeamSectionAnimations();
 });
 
 // UX/UI width matching moved to CSS media queries to prevent CLS
@@ -1919,6 +1931,65 @@ function initProcessSectionAnimations() {
             }
         });
     }
+}
+
+// Team section – sticky bar: слева 01/02/03, справа Деньги/Экспертиза/ИИ, по центру тексты; при скролле меняется активный пункт
+function initTeamSectionAnimations() {
+    const section = document.querySelector('.team-section');
+    if (!section || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    const stickyEl = section.querySelector('.team-sticky');
+    const numberItems = section.querySelectorAll('.team-number-item');
+    const labelItems = section.querySelectorAll('.team-label-item');
+    const items = section.querySelectorAll('.team-item');
+
+    if (!stickyEl || !numberItems.length || !labelItems.length || !items.length) return;
+
+    let lastActive = 0;
+
+    function setActiveIndex(index) {
+        const i = Math.max(0, Math.min(index, items.length - 1));
+        if (i === lastActive) return;
+        lastActive = i;
+        numberItems.forEach((el, j) => el.classList.toggle('active', j === i));
+        labelItems.forEach((el, j) => el.classList.toggle('active', j === i));
+        items.forEach((el, j) => el.classList.toggle('active', j === i));
+    }
+
+    function updateActiveFromScroll() {
+        const viewportCenter = window.innerHeight * 0.5;
+        let best = 0;
+        let bestDist = Infinity;
+        items.forEach((el, i) => {
+            const rect = el.getBoundingClientRect();
+            const center = rect.top + rect.height * 0.5;
+            const dist = Math.abs(center - viewportCenter);
+            if (dist < bestDist) {
+                bestDist = dist;
+                best = i;
+            }
+        });
+        setActiveIndex(best);
+    }
+
+    ScrollTrigger.create({
+        trigger: section,
+        start: 'top top',
+        end: 'bottom bottom',
+        onEnter: () => stickyEl.classList.add('team-sticky-visible'),
+        onLeaveBack: () => stickyEl.classList.remove('team-sticky-visible'),
+        onLeave: () => stickyEl.classList.remove('team-sticky-visible'),
+        onEnterBack: () => stickyEl.classList.add('team-sticky-visible'),
+        onUpdate: updateActiveFromScroll
+    });
+
+    // Если секция уже в зоне видимости при загрузке
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+        stickyEl.classList.add('team-sticky-visible');
+    }
+    updateActiveFromScroll();
+    ScrollTrigger.refresh();
 }
 
 // Helper to update theme toggle button visuals without triggering click
