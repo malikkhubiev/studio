@@ -149,10 +149,10 @@ body {
 }
 
 @keyframes rainbowcolor {
-    0%  { color: orange; }
-    33%  { color: yellow; }
-    66%  { color: #62FF00; }
-    100%  { color: rgb(0, 221, 255); }
+    0%  { color: orange; fill: orange; }
+    33%  { color: yellow; fill: yellow; }
+    66%  { color: #62FF00; fill: #62FF00; }
+    100%  { color: rgb(0, 221, 255); fill: rgb(0, 221, 255); }
 }
 
 @keyframes rainbowbg {
@@ -1129,7 +1129,7 @@ main {
 
 .process-step-tag {
     font-family: Widock;
-    font-size: 4vw;
+    font-size: 3.9vw;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--text-primary);
