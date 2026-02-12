@@ -198,8 +198,8 @@
 }
 
 .work-card-badge {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
     position: relative;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
