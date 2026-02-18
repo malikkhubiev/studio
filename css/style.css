@@ -172,7 +172,7 @@ body {
     border-radius: 8px;
     background-color: var(--text-primary);
     color: var(--bg-primary);
-    padding: 10px 15px;
+    padding: 10px 30px;
     font-family: Widock;
     font-size: 5vw;
     transition: 0.2s ease-in-out;
@@ -2435,8 +2435,12 @@ main {
     background-color: var(--black);
 }
 
-[data-theme="dark"] .work-card-badge-text text {
-    fill: var(--soft-beige);
+[data-theme="light"] .work-card-badge-text circle {
+    stroke: var(--black);
+}
+
+[data-theme="dark"] .work-card-badge-text circle {
+    stroke: var(--soft-beige);
 }
 
 [data-theme="dark"] .work-card-badge-globe {
