@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://website-malik.vercel.app/sitemap.xml
+Host: website-malik.vercel.app
+
