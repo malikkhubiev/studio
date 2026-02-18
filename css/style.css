@@ -1037,9 +1037,9 @@ main {
 .process-title {
     font-family: Widock;
     font-weight: 800;
-    font-size: 10vw;
+    font-size: 7vw;
     text-transform: uppercase;
-    line-height: 1.05;
+    line-height: 1.3;
 }
 
 .process-timeline {
@@ -1129,7 +1129,7 @@ main {
 
 .process-step-tag {
     font-family: Widock;
-    font-size: 3.9vw;
+    font-size: 3.2vw;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--text-primary);
@@ -1927,7 +1927,7 @@ main {
 .contact-title {
     font-family: Widock;
     font-weight: 800;
-    font-size: 9vw;
+    font-size: 7vw;
     text-transform: uppercase;
     color: var(--text-primary);
     line-height: 0.9;

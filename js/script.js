@@ -552,10 +552,10 @@ function initCustomCursor() {
     document.body.appendChild(viewWorkCursor);
 
     // Create contact title follow cursor
-    const contactTitleCursor = document.createElement('div');
-    contactTitleCursor.className = 'contact-title-cursor';
-    contactTitleCursor.innerHTML = `<img src="images/contact.webp" alt="">`;
-    document.body.appendChild(contactTitleCursor);
+    // const contactTitleCursor = document.createElement('div');
+    // contactTitleCursor.className = 'contact-title-cursor';
+    // contactTitleCursor.innerHTML = `<img src="images/contact.webp" alt="">`;
+    // document.body.appendChild(contactTitleCursor);
 
     // Get all project images (white areas) and work cards
     const projectImages = document.querySelectorAll('.project-image, .work-card');
